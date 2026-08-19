@@ -1,0 +1,54 @@
+.terminal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  text-shadow: var(--terminal-glow);
+}
+
+/* Заголовок сверху по центру */
+.title {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* Центрирование блока с текстом по вертикали и горизонтали */
+.content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Блок шириной в 1/4 экрана, текст ровным прямоугольником */
+.welcome {
+  width: 25vw;
+  margin: 0;
+  font-size: clamp(1.25rem, 1.8vw, 2rem);
+  line-height: 1.4;
+  text-align: justify;
+  text-align-last: justify;
+  -moz-text-align-last: justify;
+  hyphens: auto;
+}
+
+/* CRT-эффект: горизонтальные сканлайны поверх экрана */
+.scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.35) 3px,
+    rgba(0, 0, 0, 0.35) 4px
+  );
+}
