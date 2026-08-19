@@ -33,12 +33,14 @@ model Level {
   id: string;
   number: int32;
   exercisesTypes: ExerciseType[];
+  digitsQuantity: int32;
 }
 
 @doc("Data for creating or updating a level.")
 model LevelCreate {
   number: int32;
   exercisesTypes: ExerciseType[];
+  digitsQuantity: int32;
 }
 
 @doc("The level was created successfully.")
