@@ -28,14 +28,32 @@
 
 /* Блок шириной в 1/4 экрана, текст ровным прямоугольником */
 .welcome {
-  width: 25vw;
+  width: 30vw;
   margin: 0;
   font-size: clamp(1.25rem, 1.8vw, 2rem);
   line-height: 1.4;
-  text-align: justify;
-  text-align-last: justify;
-  -moz-text-align-last: justify;
+  text-align: left;
+  text-align-last: left;
+  -moz-text-align-last: left;
   hyphens: auto;
+}
+
+/* Мигающий курсор печати */
+.caret {
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  margin-left: 2px;
+  background: var(--terminal-green);
+  box-shadow: var(--terminal-glow);
+  animation: blink 0.8s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 /* CRT-эффект: горизонтальные сканлайны поверх экрана */
