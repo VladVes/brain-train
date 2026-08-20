@@ -21,11 +21,11 @@ function useTypewriter(text: string, speed = 40) {
     return () => clearInterval(id)
   }, [text, speed])
 
-  return text.slice(0, count)
+  return { typed: text.slice(0, count), done: count >= text.length }
 }
 
 function App() {
-  const typed = useTypewriter(WELCOME_TEXT)
+  const { typed, done } = useTypewriter(WELCOME_TEXT)
 
   return (
     <div className="terminal">
@@ -36,6 +36,16 @@ function App() {
           {typed}
           <span className="caret" aria-hidden="true"></span>
         </p>
+        {done && (
+          <div className="actions">
+            <button type="button" className="btn">
+              Try it
+            </button>
+            <button type="button" className="btn">
+              Login
+            </button>
+          </div>
+        )}
       </main>
 
       <div className="scanlines" aria-hidden="true"></div>

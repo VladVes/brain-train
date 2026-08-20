@@ -21,8 +21,10 @@
 .content {
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 2rem;
   width: 100%;
 }
 
@@ -36,6 +38,39 @@
   text-align-last: left;
   -moz-text-align-last: left;
   hyphens: auto;
+}
+
+/* Кнопки-действия */
+.actions {
+  display: flex;
+  gap: 1.5rem;
+  animation: fade-in 0.3s ease-in;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.btn {
+  background: var(--terminal-green);
+  color: var(--terminal-bg);
+  font-family: inherit;
+  font-size: clamp(1.25rem, 1.8vw, 2rem);
+  padding: 0.25rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  text-shadow: none;
+}
+
+.btn:hover {
+  background: var(--terminal-bg);
+  color: var(--terminal-green);
+  box-shadow: var(--terminal-glow);
 }
 
 /* Мигающий курсор печати */
